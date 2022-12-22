@@ -43,13 +43,14 @@
   flex-flow: column;
   align-items: center;
   width: 215px;
+  margin: 0 auto;
 }
 
 .search__fail-icon {
   background-image: url("../../images/not-found.svg");
   height: 82.5px;
   width: 82.5px;
-  margin-bottom: 31.5px;
+  margin: 0 auto 31.5px auto;
 }
 
 .search__fail-title {
@@ -58,6 +59,7 @@
   line-height: 30px;
   margin: 0;
   padding-bottom: 16px;
+  text-align: center;
 }
 
 .search__fail-text {
@@ -79,6 +81,7 @@
   position: relative;
   height: 50px;
   width: 50px;
+  margin: 0 auto;
 }
 
 .search__loading-text {
@@ -86,6 +89,7 @@
   font-size: 18px;
   line-height: 24px;
   color: #b6bcbf;
+  text-align: center;
 }
 
 @media screen and (max-width: 1500px) {
