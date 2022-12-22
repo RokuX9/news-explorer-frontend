@@ -1,0 +1,201 @@
+.card {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card__image {
+  height: 272px;
+  width: 400px;
+}
+
+.card__content {
+  padding: 20px 24px 24px 24px;
+}
+
+.card__date {
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  margin: 0 0 12px 0;
+}
+
+.card__title {
+  display: -webkit-box;
+  font-family: "Roboto Slab";
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 0 0 16px 0;
+  height: 60px;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.card__text {
+  display: -webkit-box;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 22px;
+  white-space: wrap;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin: 0 0 18px 0;
+  height: 110px;
+}
+
+.card__source {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #b6bcbf;
+  margin: 0;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 352px;
+}
+
+.card__bookmark {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 0;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-image: url("../../images/bookmark.svg");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.card__bookmark:hover {
+  background-image: url("../../images/bookmark-hover.svg");
+}
+
+.card__bookmark:active {
+  background-image: url("../../images/bookmark-active.svg");
+}
+
+.card__delete {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 0;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-image: url("../../images/trash.svg");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.card__delete:hover {
+  background-image: url("../../images/trash-hover.svg");
+}
+
+.card__tooltip {
+  padding: 11px 0;
+  border-radius: 10px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.06px;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  margin: 0;
+  background-color: white;
+  max-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: padding 0.5s, max-width 0.5s;
+}
+
+.card__bookmark:hover + .card__tooltip {
+  visibility: visible;
+  padding: 11px 20px;
+  max-width: 200px;
+}
+
+.card__delete:hover + .card__tooltip {
+  visibility: visible;
+  padding: 11px 20px;
+  max-width: 200px;
+}
+
+.card__keyword {
+  background-color: white;
+  border-radius: 10px;
+  font: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+  padding: 8px 22px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+@media screen and (max-width: 1500px) {
+  .card__image {
+    height: 150px;
+    width: 224px;
+  }
+
+  .card__title {
+    font-size: 22px;
+    line-height: 24px;
+    height: 72px;
+    -webkit-line-clamp: 3;
+  }
+
+  .card__text {
+    height: 88px;
+    -webkit-line-clamp: 4;
+  }
+
+  .card__source {
+    width: 192px;
+  }
+
+  .card__content {
+    padding: 16px;
+  }
+
+  .card__delete {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card__keyword {
+    top: 8px;
+    left: 8px;
+  }
+
+  .card__bookmark:hover + .card__tooltip {
+    display: none;
+  }
+
+  .card__delete:hover + .card__tooltip {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card__image {
+    height: 196px;
+    width: 288px;
+  }
+}

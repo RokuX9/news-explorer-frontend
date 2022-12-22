@@ -1,0 +1,130 @@
+.header {
+  width: -webkit-fill-available;
+  background-image: url("../../images/header-image.png");
+  background-position: center;
+  background-size: cover;
+  padding: 160px 416px 80px 416px;
+  color: white;
+}
+
+.header__title {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 64px;
+  font-family: "Roboto Slab";
+  margin: 0 0 32px 0;
+}
+
+.header__subtitle {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Roboto";
+  margin: 0 0 88px 0;
+}
+
+.header__news-search {
+  background-color: white;
+  height: 64px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__input {
+  border-radius: 100px;
+  width: -webkit-fill-available;
+  border: 0;
+  padding: 0 24px;
+  font-size: 16px;
+  font-family: "Roboto";
+}
+
+.header__input:focus {
+  outline: none;
+}
+
+.header__button {
+  border-radius: 100px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 20px 56px;
+  border: 0;
+  background-color: #2f71e5;
+  color: white;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  background-color: #347eff;
+}
+
+.header__button:active {
+  background-color: #2a65cc;
+}
+
+@media screen and (max-width: 1500px) {
+  .header {
+    padding: 104px 163px 48px 163px;
+    background-image: url("../../images/header-image-768.png");
+  }
+
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+
+  .header__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 48px;
+  }
+
+  .header__news-search {
+    height: 56px;
+  }
+
+  .header__input {
+    width: 228px;
+  }
+
+  .header__button {
+    padding: 16px 52px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    padding: 86px 16px 32px 16px;
+  }
+
+  .header__title {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+
+  .header__subtitle {
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 122px;
+  }
+
+  .header__news-search {
+    flex-flow: column;
+    background-color: transparent;
+    row-gap: 16px;
+    height: fit-content;
+  }
+
+  .header__input {
+    padding: 16px 28px;
+  }
+
+  .header__button {
+    padding: 16px 116px;
+  }
+}
