@@ -158,7 +158,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767px) {
   .navbar {
     height: 56px;
     z-index: 0;

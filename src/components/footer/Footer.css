@@ -54,7 +54,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767px) {
   .footer {
     flex-wrap: wrap-reverse;
     padding: 22px 16px;

@@ -4,7 +4,7 @@ import "./NewsList.css";
 
 export default function NewsList(props) {
   return (
-    <div className="news-list">
+    <ul className="news-list">
       {props.results.map((card, i) => (
         <Card
           keyword={card.keyword}
@@ -18,6 +18,6 @@ export default function NewsList(props) {
           key={i}
         />
       ))}
-    </div>
+    </ul>
   );
 }

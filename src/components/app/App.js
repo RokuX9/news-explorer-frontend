@@ -1,30 +1,45 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import Main from "./routes/main/Main";
-import SavedNews from "./routes/savedNews/SavedNews";
-import Footer from "./components/footer/Footer";
-import SignIn from "./components/signIn/SignIn";
-import SignUp from "./components/signUp/SignUp";
+import Navbar from "../navbar/Navbar";
+import Main from "../../routes/main/Main";
+import SavedNews from "../../routes/savedNews/SavedNews";
+import Footer from "../footer/Footer";
+import SignIn from "../signIn/SignIn";
+import SignUp from "../signUp/SignUp";
 import "./App.css";
+import SignUpSuccess from "../signUpSuccess/SignUpSuccess";
 
 function App() {
   const location = useLocation();
 
   const [signInOpened, setSignInOpened] = React.useState(false);
   const [signUpOpened, setSignUpOpened] = React.useState(false);
+  const [signUpSuccessOpened, setSignUpSuccessOpened] = React.useState(false);
 
   const openSignIn = () => {
     setSignInOpened(true);
+    setSignUpSuccessOpened(false);
     setSignUpOpened(false);
   };
   const openSignUp = () => {
     setSignInOpened(false);
+    setSignUpSuccessOpened(false);
     setSignUpOpened(true);
+  };
+  const openSignUpSuccess = () => {
+    setSignInOpened(false);
+    setSignUpSuccessOpened(true);
+    setSignUpOpened(false);
   };
   const closePopups = () => {
     setSignInOpened(false);
     setSignUpOpened(false);
+    setSignUpSuccessOpened(false);
+  };
+
+  const submitSignUp = (e) => {
+    e.preventDefault();
+    openSignUpSuccess();
   };
 
   return (
@@ -48,6 +63,12 @@ function App() {
       <SignUp
         closePopups={closePopups}
         isOpen={signUpOpened}
+        switchPopups={openSignIn}
+        submit={submitSignUp}
+      />
+      <SignUpSuccess
+        isOpen={signUpSuccessOpened}
+        closePopups={closePopups}
         switchPopups={openSignIn}
       />
     </>

@@ -14,7 +14,7 @@ export default function Card(props) {
   });
 
   return (
-    <div className="card">
+    <article className="card">
       <img
         src={props.image}
         alt={props.title + " image"}
@@ -39,6 +39,6 @@ export default function Card(props) {
       {props.pathname === "/saved-news" && (
         <p className="card__keyword">{props.keyword}</p>
       )}
-    </div>
+    </article>
   );
 }

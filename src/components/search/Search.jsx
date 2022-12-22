@@ -1,7 +1,6 @@
 import React from "react";
 import "./Search.css";
 import Spinner from "../spinner/Spinner";
-import Card from "../card/Card";
 import NewsList from "../newsList/NewsList";
 import { cards } from "../../utils/mockData";
 
@@ -21,7 +20,12 @@ export default function Search(props) {
 
   return (
     <div className="search">
-      <div className="search__success">
+      <div
+        className={
+          "search__success " +
+          (props.searchSuccess ? "search__block_opened" : "")
+        }
+      >
         <h2 className="search__success-title">Search result</h2>
         <NewsList results={searchResults} pathname={props.pathname} />
         {searchResults.length < cards.length && (
@@ -30,14 +34,23 @@ export default function Search(props) {
           </button>
         )}
       </div>
-      <div className="search__fail">
+      <div
+        className={
+          "search__fail " + (props.searchFail ? "search__block_opened" : "")
+        }
+      >
         <div className="search__fail-icon"></div>
         <p className="search__fail-title">Nothing found</p>
         <p className="search__fail-text">
           Sorry, but nothing matched your search terms.
         </p>
       </div>
-      <div className="search__loading">
+      <div
+        className={
+          "search__loading " +
+          (props.searchLoading ? "search__block_opened" : "")
+        }
+      >
         <div className="search__spinner">
           <Spinner />
         </div>
