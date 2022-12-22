@@ -31,7 +31,12 @@ export default function Header(props) {
         account.
       </p>
       <form className="header__news-search">
-        <input ref={inputRef} type="text" className="header__input" />
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Enter Search"
+          className="header__input"
+        />
         <button
           className="header__button"
           type="button"
