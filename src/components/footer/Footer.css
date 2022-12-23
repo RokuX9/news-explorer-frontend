@@ -1,0 +1,81 @@
+.footer {
+  width: -webkit-fill-available;
+  font-family: "Roboto";
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 104px;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+}
+
+.footer__links {
+  display: flex;
+  column-gap: 40px;
+}
+
+.footer__container {
+  display: flex;
+  column-gap: 40px;
+}
+
+.footer__link {
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  color: black;
+}
+
+.footer__icons {
+  display: flex;
+  column-gap: 24px;
+}
+
+.footer__icon {
+  height: 24px;
+  width: 24px;
+}
+
+.footer__icon_type_github {
+  background-image: url("../../images/github-icon.svg");
+}
+
+.footer__icon_type_linkedin {
+  background-image: url("../../images/linkedin-icon.svg");
+}
+
+@media screen and (max-width: 1500px) {
+  .footer {
+    padding: 21px 41px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    flex-wrap: wrap-reverse;
+    padding: 22px 16px;
+    row-gap: 38px;
+  }
+
+  .footer__container {
+    column-gap: 0;
+    flex-flow: column wrap;
+    height: 74px;
+    width: 100%;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-flow: column;
+    row-gap: 30px;
+  }
+
+  .footer__icons {
+    flex-basis: 100%;
+    justify-content: flex-end;
+  }
+}

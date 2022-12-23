@@ -1,0 +1,27 @@
+.signup-success {
+  background-color: white;
+  padding: 50px 36px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.signup-success__title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 28.31px;
+  width: 315px;
+}
+
+.signup-success__link {
+  cursor: pointer;
+  width: fit-content;
+  color: #2f71e5;
+  margin: 0;
+  padding-top: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .signup-success__title {
+    width: 200px;
+  }
+}
