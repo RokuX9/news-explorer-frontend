@@ -15,4 +15,4 @@ newsapi, and the backend part of the project.
 
 ## Link to the site
 
-TBA - will be added after finishing the review process
+https://www.dean-news.students.nomoredomainssbs.ru/
