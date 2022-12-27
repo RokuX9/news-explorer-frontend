@@ -17,7 +17,7 @@ export default function Card(props) {
 
   return (
     <article className="card">
-      <a href={props.link}>
+      <a href={props.link} target="_blank">
         <img
           src={props.image}
           alt={props.title + " image"}
