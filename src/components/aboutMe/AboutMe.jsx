@@ -9,12 +9,14 @@ export default function AboutMe(props) {
         <h2 className="about-me__title">About the author</h2>
         <div className="about-me__paragraphs">
           <p className="about-me__paragraph">
-            This block describes the project author. Here you should indicate
-            your name, what you do, and which development technologies you know.
+            Up and coming developer, I'm very excited about bringing ideas into
+            reality. I primarly foucs on web development, but enjoy expanding my
+            horizons and learn more about computers and electronics in general.
           </p>
           <p className="about-me__paragraph">
-            You can also talk about your experience with Practicum, what you
-            learned there, and how you can help potential customers.
+            I'm very dedicated to my job and a very presistent preson, I will
+            not give up until the goal has been achived. That is why I believe
+            you should choose me for your next project!
           </p>
         </div>
       </div>

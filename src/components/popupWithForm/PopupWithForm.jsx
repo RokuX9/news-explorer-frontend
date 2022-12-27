@@ -19,6 +19,7 @@ export default function PopupWithForm({ children, ...props }) {
     if (props.isOpen) {
       setButtonDisabled();
       setShowError(false);
+      setErrorText("Placeholder");
       return;
     }
     formRef.current.reset();
@@ -29,7 +30,14 @@ export default function PopupWithForm({ children, ...props }) {
   }, [props.formValidation]);
 
   const submit = (e) => {
-    disableButton ? e.preventDefualt() : props.submit(e);
+    disableButton
+      ? e.preventDefualt()
+      : props.submit(e).catch((err) => {
+          setShowError(true);
+          JSON.stringify(err).includes("409")
+            ? setErrorText("Email already in use")
+            : setErrorText("Error, Please try again");
+        });
   };
 
   return (
