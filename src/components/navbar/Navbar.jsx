@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 export default function Navbar(props) {
+  const currentUser = React.useContext(CurrentUserContext);
   const [openBlock, setOpenBlock] = React.useState(false);
   const setBlockOpened = () => {
     setOpenBlock(true);
@@ -65,7 +67,7 @@ export default function Navbar(props) {
             Saved News
           </NavLink>
         )}
-        {props.location.pathname === "/" && (
+        {!props.loggedIn && (
           <button
             className="navbar__link navbar__link_type_sign-in"
             onClick={props.openSignIn}
@@ -73,7 +75,7 @@ export default function Navbar(props) {
             Sign In
           </button>
         )}
-        {props.location.pathname === "/saved-news" && (
+        {props.loggedIn && (
           <button
             className={
               "navbar__link navbar__link_type_logout" +
@@ -81,8 +83,9 @@ export default function Navbar(props) {
                 ? " navbar__link_type_black navbar__link_type_border-black"
                 : "")
             }
+            onClick={props.logout}
           >
-            Dean{" "}
+            {currentUser.name + " "}
             <div
               className={
                 "navbar__logout-icon " +

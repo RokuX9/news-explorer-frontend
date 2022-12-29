@@ -1,6 +1,7 @@
 import React from "react";
 import PopupWithForm from "../popupWithForm/PopupWithForm";
 import Input from "../input/Input";
+import MainApi from "../../utils/MainApi";
 
 export default function SignIn(props) {
   const [formState, setFormState] = React.useState({
@@ -18,13 +19,22 @@ export default function SignIn(props) {
   const setInputValidation = (name, isValid) => {
     setValidation({ ...formValidation, [name]: isValid });
   };
+
+  const submit = (e) => {
+    e.preventDefault();
+    return MainApi.login(formState).then((res) => {
+      localStorage.setItem("jwt", res.token);
+      props.refreshPage();
+    });
+  };
+
   return (
     <PopupWithForm
       name="signIn"
       header="Sign In"
       buttonText="Sign In"
       isOpen={props.isOpen}
-      submit={props.submit}
+      submit={submit}
       closePopups={props.closePopups}
       formValidation={formValidation}
       linkText="Sign Up"

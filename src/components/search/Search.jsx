@@ -2,19 +2,21 @@ import React from "react";
 import "./Search.css";
 import Spinner from "../spinner/Spinner";
 import NewsList from "../newsList/NewsList";
-import { cards } from "../../utils/mockData";
 
 export default function Search(props) {
   const [searchResults, setSearchResult] = React.useState([]);
 
   React.useEffect(() => {
-    setSearchResult(cards.slice(0, 3));
-  }, []);
+    setSearchResult(props.searchResults.slice(0, 3));
+  }, [props.searchResults]);
 
   const showMore = () => {
     setSearchResult([
       ...searchResults,
-      ...cards.slice(searchResults.length, searchResults.length + 3),
+      ...props.searchResults.slice(
+        searchResults.length,
+        searchResults.length + 3
+      ),
     ]);
   };
 
@@ -27,8 +29,16 @@ export default function Search(props) {
         }
       >
         <h2 className="search__success-title">Search result</h2>
-        <NewsList results={searchResults} pathname={props.pathname} />
-        {searchResults.length < cards.length && (
+        <NewsList
+          results={searchResults}
+          keyword={props.searchKeyword}
+          pathname={props.pathname}
+          loggedIn={props.loggedIn}
+          savedCards={props.savedCards}
+          setSavedCards={props.setSavedCards}
+          loadCards={props.loadCards}
+        />
+        {searchResults.length < props.searchResults.length && (
           <button className="search__show-more" onClick={showMore}>
             Show more
           </button>

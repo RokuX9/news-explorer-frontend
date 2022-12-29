@@ -1,6 +1,7 @@
 import React from "react";
 import PopupWithForm from "../popupWithForm/PopupWithForm";
 import Input from "../input/Input";
+import MainApi from "../../utils/MainApi";
 
 export default function SignUp(props) {
   const [formState, setFormState] = React.useState({
@@ -20,13 +21,21 @@ export default function SignUp(props) {
   const setInputValidation = (name, isValid) => {
     setValidation({ ...formValidation, [name]: isValid });
   };
+
+  const submit = (e) => {
+    e.preventDefault();
+    return MainApi.register(formState).then(() => {
+      props.openSignUpSuccess();
+    });
+  };
+
   return (
     <PopupWithForm
       name="signUp"
       header="Sign Up"
       buttonText="Sign Up"
       isOpen={props.isOpen}
-      submit={props.submit}
+      submit={submit}
       closePopups={props.closePopups}
       formValidation={formValidation}
       linkText="Sign In"

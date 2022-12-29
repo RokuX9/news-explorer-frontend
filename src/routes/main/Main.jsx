@@ -8,19 +8,41 @@ export default function Main(props) {
   const [searchSuccess, setSearchSuccess] = React.useState(false);
   const [searchLoading, setSearchLoading] = React.useState(false);
   const [searchFail, setSearchFail] = React.useState(false);
+  const [searchResults, setSearchResults] = React.useState([]);
+  const [searchKeyword, setSearchKeyword] = React.useState("");
   const openSearch = () => {
     setSearchOpen(true);
   };
   const closeSearch = () => {
     setSearchOpen(false);
   };
+  const openLoading = () => {
+    setSearchFail(false);
+    setSearchSuccess(false);
+    setSearchLoading(true);
+  };
+
+  const openSuccess = () => {
+    setSearchFail(false);
+    setSearchSuccess(true);
+    setSearchLoading(false);
+  };
+
+  const openFail = () => {
+    setSearchFail(true);
+    setSearchSuccess(false);
+    setSearchLoading(false);
+  };
+
   return (
     <div>
       <Header
         openSearch={openSearch}
-        setSearchLoading={setSearchLoading}
-        setSearchSuccess={setSearchSuccess}
-        setSearchFail={setSearchFail}
+        openSuccess={openSuccess}
+        openFail={openFail}
+        openLoading={openLoading}
+        setSearchResults={setSearchResults}
+        setSearchKeyword={setSearchKeyword}
       />
       {SearchOpen && (
         <Search
@@ -28,6 +50,12 @@ export default function Main(props) {
           searchSuccess={searchSuccess}
           searchLoading={searchLoading}
           searchFail={searchFail}
+          searchResults={searchResults}
+          searchKeyword={searchKeyword}
+          savedCards={props.savedCards}
+          loggedIn={props.loggedIn}
+          setSavedCards={props.setSavedCards}
+          loadCards={props.loadCards}
         />
       )}
       <AboutMe />
