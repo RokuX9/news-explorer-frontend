@@ -1,6 +1,6 @@
 import { checkResponseStatus } from "./utils";
 
-const baseURL = "https://api.dean-news.students.nomoredomainssbs.ru";
+const baseURL = process.env.REACT_APP_API_URL;
 
 const MainApi = {
   register: (data) => {
