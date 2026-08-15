@@ -2,7 +2,7 @@ import { checkResponseStatus } from "./utils";
 
 const { REACT_APP_NEWS_API_KEY } = process.env;
 
-const baseURL = "https://api.news.rokux9.com:3000/news?";
+const baseURL = "https://api.news.rokux9.com/news?";
 
 const getDates = () => {
   const now = new Date();
